@@ -44,6 +44,10 @@ func StartZabbix() {
 		}
 		//Comment metrics sended in production
 		fmt.Printf("Metrics sended (processed: %d | failed: %d | total: %d) \n", res.Processed, res.Failed, res.Total)
+		ZabbixErrorLog("log test")
+		ZabbixPanicLog("Panic log test")
+		dt := time.Now()
+		fmt.Println("Current date and time is: ", dt.String())
 		time.Sleep(300 * time.Second)
 	}
 }
